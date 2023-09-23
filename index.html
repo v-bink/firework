@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>生日快乐٩(๑❛ᴗ❛๑)۶</title>
+  <title>烟花</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,10 +17,10 @@
 
 </head>
 <body>
-<!-- <audio id="a1" accesskey="accesskey">  
-	<source src="srkl.ogg">  
-</audio> -->
-<audio id="myAudio" src="srkl.ogg" preload="auto" accesskey loop></audio>
+<audio id="myAudio" accesskey loop>  
+	<source src="srkl.mp3" type="audio/mp3">  
+</audio>
+<!-- <audio id="myAudio" src="srkl.ogg" preload="auto" accesskey loop></audio> -->
 <!-- partial:index.partial.html -->
 <!-- SVG Spritesheet -->
 <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
@@ -47,11 +47,9 @@
 </div>
 
 <!-- App -->
-<div class="container">
-	<div id="Prompt_box" class="Prompt_box">
-		请手动打开<strong>↑</strong>声音按钮<br/>
-		左侧可开始暂停烟花动画<br/>
-		右侧为设置按钮
+<div class="container" id="container">
+	<div class="Prompt_box">
+		打开声音按钮<strong>↑</strong>,体验感+1
 	</div>
 	<div class="loading-init">
 		<div class="loading-init__header">Loading</div>
@@ -67,7 +65,7 @@
 				<svg fill="white" width="24" height="24"><use href="#icon-pause" xlink:href="#icon-pause"></use></svg>
 			</div>
 			<div class="btn sound-btn" id="sound">
-				<svg fill="white" width="24" height="24"><use href="#icon-sound-off" xlink:href="#icon-sound-off"></use></svg>
+				<svg fill="white" width="24" height="24"><use id="use" href="#icon-sound-off" xlink:href="#icon-sound-off"></use></svg>
 			</div>
 			<div class="btn settings-btn">
 				<svg fill="white" width="24" height="24"><use href="#icon-settings" xlink:href="#icon-settings"></use></svg>
@@ -122,9 +120,9 @@
 						<input class="long-exposure" type="checkbox" />
 					</div>
 				</form>
-				<!-- <div class="credits">
-					Passionately built by <a href="https://cmiller.tech/" target="_blank">Caleb Miller</a>.
-				</div> -->
+				<div class="credits">
+					<!-- Passionately built by <a href="https://cmiller.tech/" target="_blank">Caleb Miller</a>. -->
+				</div>
 			</div>
 		</div>
 	</div>
@@ -142,11 +140,7 @@
 <script src="./js/Stage@0.1.4.js"></script>
 <script src="./js/MyMath.js"></script><script  src="./js/firework.js"></script>
 <script>
-	document.getElementById('sound').addEventListener('click', function() {  
-		var audio = document.getElementById('myAudio');  
-		audio.play();  
-	  }); 
-	function warn(){
+	window.onload = ()=>{
 		div = document.querySelector('.Prompt_box')
 		if(div.classList.length == 1){
 			div.classList.add('show')
@@ -155,9 +149,7 @@
 			div.classList.add('hide')
 		}
 	}
-	warn()
-	let timer = setTimeout(warn, 5000);  
-
+	let timer = setTimeout(window.onload, 5000);  
 </script>
 </body>
 </html>

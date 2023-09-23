@@ -1,5 +1,5 @@
 'use strict';
-console.clear();
+// console.clear();
 
 // This is a prime example of what starts out as a simple project
 // and snowballs way beyond its intended size. It's a little clunky
@@ -124,7 +124,7 @@ const store = {
 		// at render time, and parsing on change.
 		config: {
 			quality: String(IS_HIGH_END_DEVICE ? QUALITY_HIGH : QUALITY_NORMAL), // will be mirrored to a global variable named `quality` in `configDidUpdate`, for perf.
-			shell: 'Random',
+			shell: 'Crackle',
 			size: IS_DESKTOP
 				? '3' // Desktop default
 				: IS_HEADER 
@@ -213,7 +213,17 @@ const store = {
 		}));
 	}
 };
-
+var audio = document.getElementById('myAudio')
+function shijian(){
+	let element = document.getElementById('use');
+	let href = element.getAttribute('href');
+	if(href=='#icon-sound-on'){
+		audio.play();
+	}else{
+		audio.pause()
+	}
+}
+let time = setInterval(shijian,1000)
 
 if (!IS_HEADER) {
 	store.load();

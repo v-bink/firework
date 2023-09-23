@@ -327,7 +327,7 @@ body {
   transition-timing-function: ease-out;
   transition-duration: 0.4s;
 }
-#Prompt_box{
+.Prompt_box{
   width: auto;
   height: auto;
   padding: 20px 20px;
@@ -336,13 +336,13 @@ body {
   z-index: 1;
   top: 50px;
   border-radius: 5px;
-  display: block;
+  display: none;
 }
 .show{
   animation: dh 1s;
   display: block;
 }
-#Prompt_box strong{
+.Prompt_box strong{
   color: red;
   font-size: 25px;
   font-weight: bold;
